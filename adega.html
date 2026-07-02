@@ -244,17 +244,20 @@ section{
     color:#ddd;
 }
 
-/* CARRINHO */
-.cart{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    background:#ff7a00;
-    color:white;
-    padding:15px 20px;
-    border-radius:50px;
-    font-weight:bold;
-    box-shadow:0 5px 20px rgba(0,0,0,.3);
+#carrinho {
+  width: 40%;
+  background-color: #ff7a00;
+  padding: 20px;
+}
+
+#lista-carrinho {
+  list-style: none;
+  padding: 0;
+}
+
+#lista-carrinho li {
+  padding: 8px;
+  border-bottom: 1px solid #ffffff;
 }
 
 /* FOOTER */
@@ -343,7 +346,7 @@ Ver Produtos
 <h3>Coca</h3>
 <p>Para refrescar seu dia.</p>
 <div class="price">R$ 13,00</div>
-<button onclick="addCart()">Adicionar ao Carrinho</button>
+<button id="adicionar-ao-carrinho-1">Adicionar ao Carrinho</button>
 </div>
 </div>
 
@@ -352,7 +355,7 @@ Ver Produtos
 <h3>Pack Heineken</h3>
 <p>Refrescante e elegante.</p>
 <div class="price">R$ 36,90</div>
-<button onclick="addCart()">Adicionar ao Carrinho</button>
+<button id="adicionar-ao-carrinho-2">Adicionar ao Carrinho</button>
 </div>
 </div>
 
@@ -361,12 +364,19 @@ Ver Produtos
 <h3>Espumante Gold</h3>
 <p>Para curtir com a familia.</p>
 <div class="price">R$ 41,90</div>
-<button onclick="addCart()">Adicionar ao Carrinho</button>
+<button id="adicionar-ao-carrinho-3">Adicionar ao Carrinho</button>
 </div>
 </div>
 
 </div>
 </div>
+</section>
+
+<section id="carrinho">
+     <h2>Carrinho de Compras</h2>
+      <ul id="lista-carrinho">
+      </ul>
+      <button id="limpar-carrinho">Limpar Carrinho</button>
 </section>
 
 <section id="beneficios">
@@ -439,18 +449,8 @@ A Adega Chiquinha nasceu com a missão de proporcionar boas experiências atrav�
 <p>© 2026 Adega Chiquinha - Todos os direitos reservados.</p>
 </footer>
 
-<div class="cart">
-🛒 Carrinho: <span id="cart-count">0</span>
-</div>
 
-<script>
-let cart = 0;
-
-function addCart(){
-    cart++;
-    document.getElementById('cart-count').innerText = cart;
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

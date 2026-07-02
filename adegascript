@@ -1,0 +1,29 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const adicionarAoCarrinhoButtons = document.querySelectorAll('.adicionar-ao-carrinho');
+  const carrinhoLista = document.getElementById('lista-carrinho');
+  const limparCarrinhoButton = document.getElementById('limpar-carrinho');
+
+  // Função para adicionar um item ao carrinho
+  function adicionarAoCarrinho(event) {
+    event.preventDefault(); // Impede o comportamento padrão do botão (recarregar a página)
+    const produto = this; // 'this' se refere ao botão clicado
+    const preco = produto.querySelector('.preco').textContent;
+
+    // Cria um novo elemento de item de carrinho
+    const itemCarrinho = document.createElement('li');
+    itemCarrinho.textContent = `${preco} - ${produto.querySelector('h3').textContent}`;
+
+    // Adiciona o item ao carrinho
+    carrinhoLista.appendChild(itemCarrinho);
+  }
+
+  // Adiciona os listeners aos botões
+  adicionarAoCarrinhoButtons.forEach(button => {
+    button.addEventListener('click', adicionarAoCarrinho);
+  });
+
+  // Limpa o carrinho
+  limparCarrinhoButton.addEventListener('click', function() {
+    carrinhoLista.innerHTML = '';
+  });
+});
