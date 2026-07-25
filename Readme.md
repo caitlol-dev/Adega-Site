@@ -1,2 +1,3 @@
-Site apenas de demonstracao
-sem muitos planos para esse site por agora.
+Reformulei o site e agora ele esta completo
+Consegue ir para o instagram ou whatsapp
+tem um carrinho para escolher os itens e leva para o whatsapp com uma mensagem pronta
