@@ -4,409 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adega Chiquinha & Tabacaria</title>
+  
+  <link rel="icon" type="image/png" href="logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="adegacss.css">
   <link rel="icon" type="image/png" href="icon.png">
-  
-  <style>
-    :root {
-      --bg-dark: #121212;
-      --bg-card: #1e1e1e;
-      --primary-gold: #e5a93c;
-      --primary-hover: #c48e2e;
-      --text-light: #f5f5f5;
-      --text-muted: #aaa;
-      --whatsapp-green: #25d366;
-      --danger-red: #ff4d4d;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-      padding-bottom: 60px;
-    }
-
-   
-    header {
-      background-color: rgba(18, 18, 18, 0.95);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      backdrop-filter: blur(8px);
-    }
-
-    .navbar {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.5rem;
-    }
-
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--primary-gold);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    .cart-btn {
-      background: transparent;
-      border: 2px solid var(--primary-gold);
-      color: var(--primary-gold);
-      padding: 8px 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: 600;
-      position: relative;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .cart-btn:hover {
-      background: var(--primary-gold);
-      color: var(--bg-dark);
-    }
-
-    .cart-count {
-      background-color: var(--danger-red);
-      color: white;
-      border-radius: 50%;
-      padding: 2px 7px;
-      font-size: 0.75rem;
-      position: absolute;
-      top: -8px;
-      right: -8px;
-    }
-
-
-    .hero {
-      text-align: center;
-      padding: 4rem 1.5rem 3rem;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(18,18,18,1)), url('wallpaper.png') center/cover no-repeat;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary-gold);
-    }
-
-    .hero p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background-color: var(--whatsapp-green);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.2s ease;
-    }
-
-    .hero-btn:hover {
-      transform: scale(1.05);
-    }
-
-    /* CATALOG */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-    }
-
-    .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid var(--primary-gold);
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .product-card {
-      background-color: var(--bg-card);
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease;
-      border: 1px solid #333;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .product-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .product-info {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .product-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .product-price {
-      font-size: 1.2rem;
-      color: var(--primary-gold);
-      font-weight: 700;
-      margin-bottom: 1rem;
-      margin-top: auto;
-    }
-
-    .add-to-cart-btn {
-      background-color: var(--primary-gold);
-      color: var(--bg-dark);
-      border: none;
-      padding: 10px;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .add-to-cart-btn:hover {
-      background-color: var(--primary-hover);
-    }
-
-   
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 200;
-    }
-
-    .modal-overlay.active {
-      display: flex;
-    }
-
-    .cart-modal {
-      background-color: var(--bg-card);
-      width: 90%;
-      max-width: 500px;
-      border-radius: 12px;
-      padding: 1.5rem;
-      max-height: 85vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .cart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #333;
-      padding-bottom: 0.5rem;
-    }
-
-    .close-modal {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    .cart-items {
-      overflow-y: auto;
-      flex-grow: 1;
-      margin-bottom: 1rem;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.8rem 0;
-      border-bottom: 1px solid #2a2a2a;
-    }
-
-    .cart-item-details h4 {
-      font-size: 0.95rem;
-    }
-
-    .cart-item-details span {
-      color: var(--primary-gold);
-      font-size: 0.9rem;
-    }
-
-    .qty-controls {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .qty-btn {
-      background-color: #333;
-      color: white;
-      border: none;
-      width: 26px;
-      height: 26px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .remove-btn {
-      color: var(--danger-red);
-      background: none;
-      border: none;
-      cursor: pointer;
-      margin-left: 10px;
-    }
-
-    .cart-footer {
-      border-top: 1px solid #333;
-      padding-top: 1rem;
-    }
-
-    .cart-total {
-      display: flex;
-      justify-content: space-between;
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .checkout-btn {
-      width: 100%;
-      background-color: var(--whatsapp-green);
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .location-section {
-      margin-top: 3rem;
-    }
-
-    .map-container {
-      width: 100%;
-      height: 350px;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-top: 1rem;
-      border: 1px solid #333;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-
-    /* botões fixados na tela */
-  .social-floating {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 9999; /* Garante que fique por cima de tudo */
-  }
-
-  /* Estilo geral dos botões */
-  .float-btn {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 26px;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .float-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
-  }
-
-  /* Cores das redes */
-  .float-btn.whatsapp {
-    background-color: #25d366;
-  }
-
-  .float-btn.instagram {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  }
-
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background-color: #0a0a0a;
-      color: var(--text-muted);
-      margin-top: 3rem;
-    }
-
-    footer a {
-      color: var(--primary-gold);
-      text-decoration: none;
-    }
-  </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <div class="navbar">
       <a href="#" class="logo">
@@ -419,27 +26,42 @@
     </div>
   </header>
 
-  
+  <!-- HERO -->
   <section class="hero">
     <h1>Adega Chiquinha & Tabacaria</h1>
-    <p>As melhores bebidas, narguiles e essências da regiao!</p>
+    <p>As melhores bebidas, narguiles, essências, gelos saborizados e açaí!</p>
     <a href="https://wa.me/5511959086782" target="_blank" class="hero-btn">
       <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
     </a>
   </section>
 
-  <main class="container">
-    <h2 class="section-title">Nossos Produtos</h2>
-    <div class="products-grid" id="productsGrid">
+  <!-- CATALOG -->
+  <main class="container" id="catalogSection">
+    <h2 class="section-title">Nosso Catálogo</h2>
+    
+    <!-- ABAS / CATEGORIAS -->
+    <div class="category-tabs" id="categoryTabs">
+      <button class="tab-btn active" onclick="filterCategory('todos')">Todos</button>
+      <button class="tab-btn" onclick="filterCategory('bebidas')">Bebidas</button>
+      <button class="tab-btn" onclick="filterCategory('cervejas')">Cervejas</button>
+      <button class="tab-btn" onclick="filterCategory('tabacaria')">Tabacaria</button>
+      <button class="tab-btn" onclick="filterCategory('acai')">Açaí</button>
+      <button class="tab-btn" onclick="filterCategory('petiscos')">Petiscos & Gelo</button>
     </div>
 
+    <!-- GRID DE PRODUTOS -->
+    <div class="products-grid" id="productsGrid"></div>
+
+    <!-- BOTÕES DE PAGINAÇÃO -->
+    <div class="pagination" id="paginationContainer"></div>
+
+    <!-- MAP LOCATION -->
     <section class="location-section">
       <h2 class="section-title">Nossa Localização</h2>
-      <p style="color: var(--text-muted);">Venha nos visitar!</p>
-      <p style="color: var(--text-muted);">R. Antônio José Bentes, 479 - Jardim Irapiranga, São Paulo - SP, 05891-160, Brasil</p>
+      <p style="color: var(--text-muted);">R. Antônio José Bentes, 479 - Jardim Irapiranga, São Paulo - SP</p>
       <div class="map-container">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3654.3147374057376!2d-46.7905!3d-23.6647!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce530944ca97c9%3A0x11d7f5650cd09432!2sR.%20Ant%C3%B4nio%20Jos%C3%A9%20Bentes%2C%20479%20-%20Jardim%20Irapiranga%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005891-160!5e0!3m2!1spt-BR!2sbr!4v1784994625447!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.3126560551163!2d-46.793214823756934!3d-23.664774465401464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce537cbd3783f9%3A0x4f867d658be29698!2sAdega%20Chiquinha!5e0!3m2!1spt-BR!2sus!4v1785011618742!5m2!1spt-BR!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" 
           allowfullscreen="" 
           loading="lazy">
         </iframe>
@@ -447,27 +69,160 @@
     </section>
   </main>
 
-  <div class="social-floating">
-  <!-- Botão WhatsApp -->
-  <a href="https://wa.me/5511959086782" target="_blank" class="float-btn whatsapp" title="Falar no WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-  
-  <!-- Botão Instagram -->
-  <a href="https://www.instagram.com/adega_chiquinha_e_tabacaria/" target="_blank" class="float-btn instagram" title="Siga no Instagram">
-    <i class="fa-brands fa-instagram"></i>
-  </a>
-</div>
+  <!-- MODAL DE SELEÇÃO DE ESSÊNCIAS -->
+  <div class="modal-overlay" id="essenciaModalOverlay">
+    <div class="essencia-modal">
+      <div class="modal-header">
+        <h3>Escolha as Essências</h3>
+        <button class="close-modal" id="closeEssenciaBtn">&times;</button>
+      </div>
 
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+        Selecione a quantidade e os sabores de cada marca desejada.
+      </p>
+
+      <div id="essenciasGroupContainer">
+        <!-- Gerado via JavaScript -->
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; margin-bottom: 15px;">
+        <span style="font-weight: 600;">Total em Essências:</span>
+        <span id="essenciaModalTotal" style="color: var(--essencia-purple); font-weight: 700; font-size: 1.1rem;">R$ 0,00</span>
+      </div>
+
+      <button class="add-to-cart-btn essencia-btn" id="confirmEssenciaBtn">
+        Adicionar Essências ao Carrinho
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL DE SELEÇÃO DE GELO -->
+  <div class="modal-overlay" id="geloModalOverlay">
+    <div class="gelo-modal">
+      <div class="modal-header">
+        <h3>Escolha os Sabores de Gelo</h3>
+        <button class="close-modal" id="closeGeloBtn">&times;</button>
+      </div>
+
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+        Selecione a quantidade de cada sabor desejado. Valor: <b>R$ 4,00 cada</b>.
+      </p>
+
+      <div class="option-group" id="iceFlavorsList">
+        <!-- Gerado via JavaScript -->
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; margin-bottom: 15px;">
+        <span style="font-weight: 600;">Total de Gelos:</span>
+        <span id="geloModalTotal" style="color: var(--ice-blue); font-weight: 700; font-size: 1.1rem;">R$ 0,00</span>
+      </div>
+
+      <button class="add-to-cart-btn gelo-btn" id="confirmGeloBtn">
+        Adicionar Gelos ao Carrinho
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL DO AÇAÍ -->
+  <div class="modal-overlay" id="acaiModalOverlay">
+    <div class="acai-modal">
+      <div class="modal-header">
+        <h3>Monte seu Açaí</h3>
+        <button class="close-modal" id="closeAcaiBtn">&times;</button>
+      </div>
+
+      <!-- Tamanhos (Obrigatório) -->
+      <div class="option-group">
+        <h4>1. Escolha o Tamanho <span style="color:var(--danger-red);">(Obrigatório)</span></h4>
+        <label class="option-item">
+          <span><input type="radio" name="acaiSize" value="200ml" data-price="10.00"> Açaí 200ml</span>
+          <b>R$ 10,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="radio" name="acaiSize" value="300ml" data-price="14.00"> Açaí 300ml</span>
+          <b>R$ 14,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="radio" name="acaiSize" value="500ml" data-price="20.00"> Açaí 500ml</span>
+          <b>R$ 20,00</b>
+        </label>
+      </div>
+
+      <!-- Coberturas -->
+      <div class="option-group">
+        <h4>2. Coberturas (Opcional)</h4>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Leite Condensado" data-price="2.00"> Leite Condensado</span>
+          <b>+ R$ 2,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Calda de Chocolate" data-price="2.00"> Calda de Chocolate</span>
+          <b>+ R$ 2,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Calda de Morango" data-price="2.00"> Calda de Morango</span>
+          <b>+ R$ 2,00</b>
+        </label>
+      </div>
+
+      <!-- Frutas -->
+      <div class="option-group">
+        <h4>3. Frutas (Opcional)</h4>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Banana" data-price="3.00"> Banana</span>
+          <b>+ R$ 3,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Morango" data-price="4.00"> Morango</span>
+          <b>+ R$ 4,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Kiwi" data-price="4.50"> Kiwi</span>
+          <b>+ R$ 4,50</b>
+        </label>
+      </div>
+
+      <!-- Complementos -->
+      <div class="option-group">
+        <h4>4. Complementos (Opcional)</h4>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Leite em Pó" data-price="2.50"> Leite em Pó</span>
+          <b>+ R$ 2,50</b>
+        </label>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Paçoca" data-price="2.00"> Paçoca</span>
+          <b>+ R$ 2,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Granola" data-price="2.00"> Granola</span>
+          <b>+ R$ 2,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Nutella" data-price="5.00"> Nutella</span>
+          <b>+ R$ 5,00</b>
+        </label>
+      </div>
+
+      <button class="add-to-cart-btn acai-btn" id="confirmAcaiBtn" style="margin-top: 10px;">
+        Adicionar Açaí ao Carrinho
+      </button>
+    </div>
+  </div>
+
+  <!-- CART MODAL -->
   <div class="modal-overlay" id="modalOverlay">
     <div class="cart-modal">
-      <div class="cart-header">
-        <h3>Seu Carrinho</h3>
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <h3>Seu Carrinho</h3>
+          <button class="clear-cart-btn" onclick="clearCart()">
+            <i class="fa-solid fa-trash-can"></i> Limpar Carrinho
+          </button>
+        </div>
         <button class="close-modal" id="closeCartBtn">&times;</button>
       </div>
       
-      <div class="cart-items" id="cartItemsContainer">
-      </div>
+      <div class="cart-items" id="cartItemsContainer"></div>
 
       <div class="cart-footer">
         <div class="cart-total">
@@ -481,11 +236,23 @@
     </div>
   </div>
 
+  <!-- FLOATING BUTTONS -->
+  <div class="social-floating">
+    <a href="https://wa.me/5511959086782" target="_blank" class="float-btn whatsapp" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="https://www.instagram.com/adega_chiquinha_e_tabacaria/" target="_blank" class="float-btn instagram" title="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2026 Adega Chiquinha & Tabacaria. Todos os direitos reservados.</p>
     <p>Siga no Instagram: <a href="https://www.instagram.com/adega_chiquinha_e_tabacaria/" target="_blank">@adega_chiquinha_e_tabacaria</a></p>
   </footer>
 
-  <script src="adegascript.js"></script> 
+  <!-- JAVASCRIPT -->
+  <script src="adegascript.js"></script>
 </body>
 </html>
