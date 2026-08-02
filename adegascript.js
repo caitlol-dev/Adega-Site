@@ -3,14 +3,14 @@ const IMG_ACAI = "https://www.reporteagricola.cl/files/69a5967826ac8_1200x719.jp
     const IMG_ESSENCIA = "https://marketup-cdn.s3-us-west-2.amazonaws.com/files/1197874/products/z21bea065-8889-4c5f-abca-fa6195dca7c4.jpeg";
 
     // --- SABORES DE GELO ---
-    const ICE_PRICE = 4.00;
+    const ICE_PRICE = 2.50;
     const iceFlavors = [
       { id: "coco", name: "Gelo de Coco" },
       { id: "morango", name: "Gelo de Morango" },
-      { id: "melancia", name: "Gelo de Melancia" },
+      { id: "pessego", name: "Gelo de Pêssego" },
       { id: "maracuja", name: "Gelo de Maracujá" },
-      { id: "limao", name: "Gelo de Limão" },
-      { id: "tradicional", name: "Gelo Tradicional (Sem Sabor)" }
+      { id: "macaverde", name: "Gelo de Maçã verde" },
+      { id: "uva", name: "Gelo de Uva" }
     ];
     let tempIceQuantities = {};
 
@@ -67,7 +67,7 @@ const IMG_ACAI = "https://www.reporteagricola.cl/files/69a5967826ac8_1200x719.jp
     // --- LISTA DE PRODUTOS PRINCIPAIS ---
     const products = [
       { id: "acai", name: "Açaí no Copo (Personalizado)", price: 10.00, category: "acai", img: "https://www.reporteagricola.cl/files/69a5967826ac8_1200x719.jpg", isCustomAcai: true },
-      { id: "gelo_sabor", name: "Gelo em Barra / Saborizado", price: 4.00, category: "petiscos", img: "https://cdn.awsli.com.br/2500x2500/1829/1829972/produto/225457948/embalagem-bopp-perola-gelo-de-coco---centenario---001b-vgwfuzul5m.png", isCustomGelo: true },
+      { id: "gelo_sabor", name: "Gelo em Barra / Saborizado", price: 2.50, category: "petiscos", img: "https://cdn.awsli.com.br/2500x2500/1829/1829972/produto/225457948/embalagem-bopp-perola-gelo-de-coco---centenario---001b-vgwfuzul5m.png", isCustomGelo: true },
       { id: "essencias", name: "Essências (Ziggy, LK, Smyrna...)", price: 12.00, category: "tabacaria", img: "https://marketup-cdn.s3-us-west-2.amazonaws.com/files/1197874/products/z21bea065-8889-4c5f-abca-fa6195dca7c4.jpeg", isCustomEssencia: true },
       { id: "p1", name: "Whisky Red Label 1L", price: 99.90, category: "bebidas", img: "https://acdn-us.mitiendanube.com/stores/001/043/810/products/80492338008eee366619396682ce61e3-1cf60238b2e08b0c5317616699369579-1024-1024.webp" },
       { id: "p2", name: "Cerveja Heineken Long Neck", price: 8.50, category: "cervejas", img: "https://cdn.awsli.com.br/2500x2500/2595/2595005/produto/301832214/kit-heineken-long-0kllxpmtxu.jpeg" },
@@ -75,7 +75,7 @@ const IMG_ACAI = "https://www.reporteagricola.cl/files/69a5967826ac8_1200x719.jp
       { id: "p5", name: "Carvão para Narguile 1kg", price: 35.00, category: "tabacaria", img: "https://cdn.awsli.com.br/600x450/294/294169/produto/89393593da89c2f7d8.jpg" },
       { id: "p6", name: "Gin Tanqueray 750ml", price: 119.90, category: "bebidas", img: "https://acdn-us.mitiendanube.com/stores/001/043/810/products/1c1db42fb8a82799e1e2a8c48e6b8ced-52a1051c2a23d78d1f17612248169752-1024-1024.webp" },
       { id: "p7", name: "Cerveja Amstel Latão 473ml", price: 5.50, category: "cervejas", img: "https://d2ng48q17pwd8f.cloudfront.net/Custom/Content/Products/10/23/1023039_cerv-amstel-lt-473ml-fardo-c-12-30137_m1_637296216948804598.webp" },
-      { id: "p8", name: "Saco de Gelo 10kg", price: 12.00, category: "petiscos", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5aNWYal9-MqY-YkyFg6rLm03JQ9GoNiPQ8VFcjfZmYw&s=10" },
+      { id: "p8", name: "Saco de Gelo 5kg", price: 13.00, category: "petiscos", img: "https://http2.mlstatic.com/D_NQ_NP_963128-MLB45792635373_052021-O.webp" },
       { id: "p9", name: "Energético Red Bull 250ml", price: 10.00, category: "bebidas", img: "https://http2.mlstatic.com/D_NQ_NP_853255-MLB106954097012_022026-O-red-bull-energy-drink-pack-com-4-unidades-250ml.webp" },
       { id: "p10", name: "Whisky Black Label 1L", price: 189.90, category: "bebidas", img: "https://m.media-amazon.com/images/I/816+OxYlekL._AC_UF350,350_QL80_.jpg" },
       { id: "p11", name: "Cerveja Corona 330ml", price: 9.00, category: "cervejas", img: "https://http2.mlstatic.com/D_NQ_NP_886603-MLB100169247429_122025-O.webp" }
@@ -162,11 +162,11 @@ const IMG_ACAI = "https://www.reporteagricola.cl/files/69a5967826ac8_1200x719.jp
         if (product.isCustomAcai) {
           btnText = 'Monte seu Açaí';
           btnClass += ' acai-btn';
-          priceText = 'A partir de R$ 10,00';
+          priceText = 'A partir de R$ 9,50';
         } else if (product.isCustomGelo) {
           btnText = 'Escolher Sabores';
           btnClass += ' gelo-btn';
-          priceText = 'R$ 4,00 cada';
+          priceText = 'R$ 2,50 cada';
         } else if (product.isCustomEssencia) {
           btnText = 'Escolher Essências';
           btnClass += ' essencia-btn';
@@ -348,7 +348,7 @@ const IMG_ACAI = "https://www.reporteagricola.cl/files/69a5967826ac8_1200x719.jp
         <div class="option-item">
           <div class="item-info">
             <b>${flavor.name}</b>
-            <span>R$ 4,00</span>
+            <span>R$ 2,50</span>
           </div>
           <div class="qty-controls">
             <button class="qty-btn" onclick="changeTempIceQty('${flavor.id}', -1)">-</button>
@@ -424,38 +424,57 @@ const IMG_ACAI = "https://www.reporteagricola.cl/files/69a5967826ac8_1200x719.jp
     }
 
     /* --- LÓGICA DE AÇAÍ --- */
-    confirmAcaiBtn.addEventListener('click', () => {
-      const selectedSize = document.querySelector('input[name="acaiSize"]:checked');
-      if (!selectedSize) {
-        alert("Por favor, selecione o tamanho do açaí!");
-        return;
+confirmAcaiBtn.addEventListener('click', () => {
+  const selectedSize = document.querySelector('input[name="acaiSize"]:checked');
+  if (!selectedSize) {
+    alert("Por favor, selecione o tamanho do açaí!");
+    return;
+  }
+
+  const basePrice = parseFloat(selectedSize.dataset.price);
+  const sizeName = selectedSize.value;
+  const addons = Array.from(document.querySelectorAll('input[name="acaiAddon"]:checked'));
+  
+  let totalPrice = basePrice;
+  let selectedAddons = [];
+
+  if (sizeName === '300ml' || sizeName === '500ml') {
+    // 3 acompanhamentos são gratuitos
+    const freeCount = 3;
+    const extraPricePerUnit = 3.00;
+
+    addons.forEach((addon, index) => {
+      selectedAddons.push(addon.value);
+      // Cobrar R$ 3,00 apenas a partir do 4º acompanhamento
+      if (index >= freeCount) {
+        totalPrice += extraPricePerUnit;
       }
-
-      let totalPrice = parseFloat(selectedSize.dataset.price);
-      let sizeName = selectedSize.value;
-      let selectedAddons = [];
-
-      const addons = document.querySelectorAll('input[name="acaiAddon"]:checked');
-      addons.forEach(addon => {
-        totalPrice += parseFloat(addon.dataset.price);
-        selectedAddons.push(addon.value);
-      });
-
-      const acaiItem = {
-        id: 'acai_' + Date.now(),
-        name: `Açaí ${sizeName}`,
-        details: selectedAddons.length > 0 ? selectedAddons.join(', ') : 'Sem adicionais',
-        price: totalPrice,
-        img: IMG_ACAI,
-        quantity: 1,
-        isCustom: true
-      };
-
-      cart.push(acaiItem);
-      updateCartUI();
-      acaiModalOverlay.classList.remove('active');
-      resetAcaiForm();
     });
+  } else {
+    // Para outros tamanhos (ex: 200ml), cobra o valor padrão cadastrado
+    addons.forEach(addon => {
+      totalPrice += parseFloat(addon.dataset.price);
+      selectedAddons.push(addon.value);
+    });
+  }
+
+  const acaiItem = {
+    id: 'acai_' + Date.now(),
+    name: `Açaí ${sizeName}`,
+    details: selectedAddons.length > 0 
+      ? `${selectedAddons.join(', ')} (${addons.length} acompanhamento(s))` 
+      : 'Sem acompanhamentos',
+    price: totalPrice,
+    img: IMG_ACAI,
+    quantity: 1,
+    isCustom: true
+  };
+
+  cart.push(acaiItem);
+  updateCartUI();
+  acaiModalOverlay.classList.remove('active');
+  resetAcaiForm();
+});
 
     function resetAcaiForm() {
       document.querySelectorAll('input[name="acaiSize"]').forEach(r => r.checked = false);

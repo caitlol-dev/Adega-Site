@@ -105,7 +105,7 @@
       </div>
 
       <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
-        Selecione a quantidade de cada sabor desejado. Valor: <b>R$ 4,00 cada</b>.
+        Selecione a quantidade de cada sabor desejado. Valor: <b>R$ 2,50 cada</b>.
       </p>
 
       <div class="option-group" id="iceFlavorsList">
@@ -131,20 +131,25 @@
         <button class="close-modal" id="closeAcaiBtn">&times;</button>
       </div>
 
+       <!-- Mensagem explicativa dos acompanhamentos -->
+    <p style="font-size: 0.8rem; color: var(--primary-gold); margin-bottom: 0.5rem;">
+      * Nos tamanhos de 300ml e 500ml, os primeiros 3 acompanhamentos são grátis! Adicionais extras custam R$ 3,00 cada.
+    </p>
+    
       <!-- Tamanhos (Obrigatório) -->
       <div class="option-group">
         <h4>1. Escolha o Tamanho <span style="color:var(--danger-red);">(Obrigatório)</span></h4>
         <label class="option-item">
-          <span><input type="radio" name="acaiSize" value="200ml" data-price="10.00"> Açaí 200ml</span>
-          <b>R$ 10,00</b>
+          <span><input type="radio" name="acaiSize" value="200ml" data-price="9.50"> Açaí 200ml</span>
+          <b>R$ 9,50</b>
         </label>
         <label class="option-item">
-          <span><input type="radio" name="acaiSize" value="300ml" data-price="14.00"> Açaí 300ml</span>
-          <b>R$ 14,00</b>
+          <span><input type="radio" name="acaiSize" value="300ml" data-price="18.00"> Açaí 300ml</span>
+          <b>R$ 18,00</b>
         </label>
         <label class="option-item">
-          <span><input type="radio" name="acaiSize" value="500ml" data-price="20.00"> Açaí 500ml</span>
-          <b>R$ 20,00</b>
+          <span><input type="radio" name="acaiSize" value="500ml" data-price="25.00"> Açaí 500ml</span>
+          <b>R$ 25,00</b>
         </label>
       </div>
 
@@ -152,16 +157,24 @@
       <div class="option-group">
         <h4>2. Coberturas (Opcional)</h4>
         <label class="option-item">
-          <span><input type="checkbox" name="acaiAddon" value="Leite Condensado" data-price="2.00"> Leite Condensado</span>
-          <b>+ R$ 2,00</b>
+          <span><input type="checkbox" name="acaiAddon" value="Leite Condensado" data-price="3.00"> Leite Condensado</span>
+          <b>+ R$ 3,00</b>
         </label>
         <label class="option-item">
-          <span><input type="checkbox" name="acaiAddon" value="Calda de Chocolate" data-price="2.00"> Calda de Chocolate</span>
-          <b>+ R$ 2,00</b>
+          <span><input type="checkbox" name="acaiAddon" value="Calda de Chocolate" data-price="3.00"> Calda de Chocolate</span>
+          <b>+ R$ 3,00</b>
         </label>
         <label class="option-item">
-          <span><input type="checkbox" name="acaiAddon" value="Calda de Morango" data-price="2.00"> Calda de Morango</span>
-          <b>+ R$ 2,00</b>
+          <span><input type="checkbox" name="acaiAddon" value="Calda de Morango" data-price="3.00"> Calda de Morango</span>
+          <b>+ R$ 3,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Calda de Caramelo" data-price="3.00"> Calda de Caramelo</span>
+          <b>+ R$ 3,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Calda de Maracuja" data-price="3.00"> Calda de Maracuja</span>
+          <b>+ R$ 3,00</b>
         </label>
       </div>
 
@@ -173,12 +186,8 @@
           <b>+ R$ 3,00</b>
         </label>
         <label class="option-item">
-          <span><input type="checkbox" name="acaiAddon" value="Morango" data-price="4.00"> Morango</span>
-          <b>+ R$ 4,00</b>
-        </label>
-        <label class="option-item">
-          <span><input type="checkbox" name="acaiAddon" value="Kiwi" data-price="4.50"> Kiwi</span>
-          <b>+ R$ 4,50</b>
+          <span><input type="checkbox" name="acaiAddon" value="Morango" data-price="3.00"> Morango</span>
+          <b>+ R$ 3,00</b>
         </label>
       </div>
 
@@ -186,20 +195,36 @@
       <div class="option-group">
         <h4>4. Complementos (Opcional)</h4>
         <label class="option-item">
-          <span><input type="checkbox" name="acaiAddon" value="Leite em Pó" data-price="2.50"> Leite em Pó</span>
-          <b>+ R$ 2,50</b>
+          <span><input type="checkbox" name="acaiAddon" value="Granola" data-price="3.00"> Granola</span>
+          <b>+ R$ 3,00</b>
         </label>
         <label class="option-item">
-          <span><input type="checkbox" name="acaiAddon" value="Paçoca" data-price="2.00"> Paçoca</span>
-          <b>+ R$ 2,00</b>
+          <span><input type="checkbox" name="acaiAddon" value="Paçoca" data-price="3.00"> Paçoca</span>
+          <b>+ R$ 3,00</b>
         </label>
         <label class="option-item">
-          <span><input type="checkbox" name="acaiAddon" value="Granola" data-price="2.00"> Granola</span>
-          <b>+ R$ 2,00</b>
+          <span><input type="checkbox" name="acaiAddon" value="Granola" data-price="3.00"> Granola</span>
+          <b>+ R$ 3,00</b>
         </label>
         <label class="option-item">
-          <span><input type="checkbox" name="acaiAddon" value="Nutella" data-price="5.00"> Nutella</span>
-          <b>+ R$ 5,00</b>
+          <span><input type="checkbox" name="acaiAddon" value="Ninho" data-price="3.00"> Ninho</span>
+          <b>+ R$ 3,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="MMs" data-price="3.00"> MMs</span>
+          <b>+ R$ 3,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Bolacha Oreo" data-price="3.00"> Bolacha Oreo</span>
+          <b>+ R$ 3,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Coco Ralado" data-price="3.00"> Coco Ralado</span>
+          <b>+ R$ 3,00</b>
+        </label>
+        <label class="option-item">
+          <span><input type="checkbox" name="acaiAddon" value="Ovo Maltine" data-price="3.00"> Ovo Maltine</span>
+          <b>+ R$ 3,00</b>
         </label>
       </div>
 
